@@ -38,6 +38,10 @@ int main(){
         (*it)->Accelerate();
         std::cout << "racer : " << (*it)->WhatAmI() << ",  vitesse : " << (*it)->speed() << std::endl ;
     }
-    
+
+    for (auto& racer : racers){
+        racer->Accelerate();
+        std::cout << "racer : " << racer->WhatAmI() <<  ", vitesse : " << racer->speed() << std::endl ;
+    }
     return 0 ;
 }
