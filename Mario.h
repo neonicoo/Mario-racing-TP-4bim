@@ -1,5 +1,8 @@
 #include "Character.h"
 
+#ifndef MARIO_H
+#define MARIO_H
+
 class Mario : public Character{
     public:
         Mario();
@@ -8,3 +11,5 @@ class Mario : public Character{
 
         ~Mario() = default;
 };
+
+#endif

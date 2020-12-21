@@ -1,5 +1,8 @@
 #include "Character.h"
 
+#ifndef YOSHI_H
+#define YOSHI_H
+
 class Yoshi : public Character{
 
     protected:
@@ -20,3 +23,4 @@ class Yoshi : public Character{
         
         ~Yoshi() = default;
 };
+#endif

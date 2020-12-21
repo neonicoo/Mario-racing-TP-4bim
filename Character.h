@@ -1,6 +1,9 @@
 #include<iostream>
 #include<string>
 
+#ifndef CHARACTER_H
+#define CHARACTER_H
+
 class Character{
 
     protected:
@@ -35,3 +38,5 @@ class Character{
         ~Character() = default;
 
 };
+
+#endif
