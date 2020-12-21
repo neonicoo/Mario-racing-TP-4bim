@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <vector>
 #include "Mario.h"
+#include "Yoshi.h"
 
 int main(){
 

@@ -19,8 +19,8 @@ class Yoshi : public Character{
         inline int crests() const{
             return this->crests_;
         }
-
         
         ~Yoshi() = default;
 };
+
 #endif
