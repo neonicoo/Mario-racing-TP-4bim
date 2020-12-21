@@ -25,6 +25,19 @@ int main(){
     yoshi.Accelerate();
     std::cout << "Vitesse yoshi apres acceleration : " << yoshi.speed()  << std::endl ;
     
+    std::vector<Character*> racers;
+
+    racers.push_back(&mario);
+    racers.push_back(&yoshi);
+
+    racers.push_back(new Mario());
+    racers.push_back(new Yoshi());
+
+    for (std::vector<Character*>::iterator it = racers.begin();
+        it != racers.end(); ++it){
+        (*it)->Accelerate();
+        std::cout << "racer : " << (*it)->WhatAmI() << ",  vitesse : " << (*it)->speed() << std::endl ;
+    }
     
     return 0 ;
 }
