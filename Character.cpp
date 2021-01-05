@@ -37,3 +37,6 @@ void Character::Break(){
 std::string Character::WhatAmI() const{
     return "A character has no name";
 };
+
+Character::~Character(){
+};

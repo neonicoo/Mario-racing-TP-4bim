@@ -9,7 +9,7 @@ class Mario : public Character{
         Mario(float speed, float max_speed);
         virtual std::string WhatAmI() const override ;
 
-        ~Mario() = default;
+        ~Mario();
 };
 
 #endif

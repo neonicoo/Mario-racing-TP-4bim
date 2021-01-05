@@ -35,7 +35,7 @@ class Character{
         }
 
         // #### Destructeur #### //
-        ~Character() = default;
+        virtual ~Character();
 
 };
 

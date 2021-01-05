@@ -21,7 +21,7 @@ class Yoshi : public Character{
             return this->crests_;
         }
         
-        ~Yoshi() = default;
+        ~Yoshi();
 };
 
 #endif

@@ -28,3 +28,6 @@ void Yoshi::Accelerate(){
         this->speed_ = this->max_speed_;
     }
 };
+
+Yoshi::~Yoshi(){
+};
