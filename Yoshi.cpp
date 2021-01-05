@@ -18,7 +18,7 @@ void Yoshi::set_crests(int new_crests){
 };
 
 std::string Yoshi::WhatAmI() const{
-    return "It's-a me, Yoshi, crests : " + std::to_string(this->crests_);
+    return "It's-a me, Yoshi with " + std::to_string(this->crests_) + " crests";
 };
 
 void Yoshi::Accelerate(){
