@@ -4,8 +4,13 @@ Yoshi::Yoshi():Character(){
     this->crests_= 1;
 };
 
-Yoshi::Yoshi(float speed, float max_speed):Character(speed, max_speed)
+Yoshi::Yoshi(int crests):Character(){
+    this->crests_= crests;
+};
+
+Yoshi::Yoshi(float speed, float max_speed, int crests = 1):Character(speed, max_speed)
 {
+    this->crests_= crests;
 };
 
 void Yoshi::set_crests(int new_crests){

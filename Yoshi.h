@@ -10,7 +10,8 @@ class Yoshi : public Character{
 
     public:
         Yoshi();
-        Yoshi(float speed, float max_speed);
+        Yoshi(int crests);
+        Yoshi(float speed, float max_speed, int crests);
         void set_crests(int new_crests);
 
         virtual std::string WhatAmI() const override;
