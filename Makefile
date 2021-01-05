@@ -1,19 +1,32 @@
-objects = main.o Character.o Mario.o Yoshi.o
+all: runtests clean
 
-main: $(objects)
-	g++ -o main $(objects)
+objects = Character.o Mario.o Yoshi.o
+CXXFLAGS = -Wall -Wextra -g -std=c++14
 
-main.o: main.cpp 
-	g++ -c main.cpp -o main.o
+runtests: tests
+
+tests: $(objects) tests.o
+	g++ -o $@ $^ googletest-release-1.10.0/build/lib/libgtest.a googletest-release-1.10.0/build/lib/libgtest_main.a -pthread
+
+tests.o: tests.cpp Character.h Mario.h Yoshi.h
+	g++ -c $(CXXFLAGS) $< -o $@ -Igoogletest-release-1.10.0/googletest/include/
+
+
+runmain: main
+
+main: $(objects) main.o
+
+main.o: main.cpp Character.h Mario.h Yoshi.h
 
 Character.o: Character.cpp Character.h
-	g++ -c Character.cpp -o Character.o
 
-Mario.o: Mario.cpp Mario.h
-	g++ -c Mario.cpp -o Mario.o
+Mario.o: Mario.cpp Mario.h Character.h
 
-Yoshi.o: Yoshi.cpp Yoshi.h
-	g++ -c Yoshi.cpp -o Yoshi.o
+Yoshi.o: Yoshi.cpp Yoshi.h Character.h
+
+%.o: %.cpp %.h
+	g++ -c $(CXXFLAGS) $< -o $@
 
 clean:
-	rm $(objects)
+	rm $(objects) tests tests.o
+	
