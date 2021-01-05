@@ -4,13 +4,13 @@ objects = Character.o Mario.o Yoshi.o
 CXXFLAGS = -Wall -Wextra -g -std=c++14
 
 runtests: tests
+	./tests
 
 tests: $(objects) tests.o
 	g++ -o $@ $^ googletest-release-1.10.0/build/lib/libgtest.a googletest-release-1.10.0/build/lib/libgtest_main.a -pthread
 
 tests.o: tests.cpp Character.h Mario.h Yoshi.h
 	g++ -c $(CXXFLAGS) $< -o $@ -Igoogletest-release-1.10.0/googletest/include/
-
 
 runmain: main
 
@@ -29,4 +29,3 @@ Yoshi.o: Yoshi.cpp Yoshi.h Character.h
 
 clean:
 	rm $(objects) tests tests.o
-	
