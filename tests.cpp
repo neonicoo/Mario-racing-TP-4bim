@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <cstdlib>
 #include <vector>
 #include <string>
 #include "Character.h"
@@ -24,4 +25,24 @@ TEST(CharacterTests, CharacterConstructors){
     delete chartest1;
     delete mariotest1;
     delete yoshitest1;
+}
+
+
+TEST(ContainersTests, CharacterContainer){
+    std::vector<Character*> racers;
+
+    Mario* mariotest2 = new Mario(5, 20);
+
+    racers.push_back(mariotest2);
+
+    for (std::vector<Character*>::iterator it = racers.begin();
+        it != racers.end(); ++it){
+        ASSERT_EQ( (*it)->WhatAmI(), std::string("It's-a Me , Mario"));
+    }
+
+    for (auto& racer : racers){
+        racer->Accelerate();
+        ASSERT_EQ(mariotest2->speed(), 6);
+
+    }
 }
