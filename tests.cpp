@@ -45,4 +45,6 @@ TEST(ContainersTests, CharacterContainer){
         ASSERT_EQ(mariotest2->speed(), 6);
 
     }
+
+    delete mariotest2 ;
 }
