@@ -16,7 +16,7 @@ int main(){
     std::cout << "Vitesse mario apres acceleration  : " << mario.speed() << std::endl ;
     
 
-    Yoshi yoshi(8.1,40.0);
+    Yoshi yoshi(8.1,40.0, 2);
     std::cout << yoshi.WhatAmI() << std::endl;
 
     yoshi.set_speed(7.5);
