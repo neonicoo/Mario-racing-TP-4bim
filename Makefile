@@ -12,11 +12,16 @@ tests: $(objects) tests.o
 tests.o: tests.cpp Character.h Mario.h Yoshi.h
 	g++ -c $(CXXFLAGS) $< -o $@ -Igoogletest-release-1.10.0/googletest/include/
 
-runmain: main
 
-main: $(objects) main.o
+runmain: main
+	./main
+	make clean
+
+main: main.o $(objects)
+	g++ -o $@ $^
 
 main.o: main.cpp Character.h Mario.h Yoshi.h
+	g++ -c $(CXXFLAGS) $< -o $@
 
 Character.o: Character.cpp Character.h
 
@@ -27,5 +32,6 @@ Yoshi.o: Yoshi.cpp Yoshi.h Character.h
 %.o: %.cpp %.h
 	g++ -c $(CXXFLAGS) $< -o $@
 
+.PHONY: clean
 clean:
-	rm $(objects) tests tests.o
+	-$(RM) main tests *.o
